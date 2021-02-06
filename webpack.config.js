@@ -13,10 +13,11 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
-                    { loader: "style-loader/url" },
-                    { loader: "file-loader", options: { name: "[name].[ext]" } },
+                   "style-loader",
+                   "css-loader",
+                   "sass-loader"
                 ],
             },
             {
