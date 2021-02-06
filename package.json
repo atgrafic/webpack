@@ -1,18 +1,23 @@
 {
-  "name": "20210206_webpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
-  }
+    "name": "20210206_webpack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --mode=production",
+        "build:dev": "webpack --mode=development",
+        "start:dev": "webpack-dev-server --mode=development"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "css-loader": "^2.1.1",
+        "file-loader": "^3.0.1",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-server": "^3.7.1"
+    }
 }
-
