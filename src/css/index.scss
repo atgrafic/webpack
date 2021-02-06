@@ -1,5 +1,43 @@
+//zmienna
+$blueColor: rbg(223, 221, 234);
+$padding: 10px 20px 30px 10px;
+$widthNormal: 500px;
+@mixin cont($width, $height, $bgc) {
+    width: $width;
+    height: $height;
+    background-color: $bgc;
+}
 body {
     h1 {
         background: rgb(59, 184, 115);
     }
+}
+.wrapper {
+    max-width: 250px;
+    background-color: lightblue;
+    h1 {
+        color: white;
+        padding: $padding;
+    }
+    h2 {
+        color: $blueColor;
+    }
+    &_sample {
+        background-color: $blueColor;
+        .someSpan {
+            color: chartreuse;
+        }
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            color: brown;
+        }
+    }
+}
+.container {
+    @include cont(100px, 80px, brown);
+}
+.container2 {
+    @include cont($widthNormal, 30px, orange);
 }
