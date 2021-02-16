@@ -1,4 +1,4 @@
-//zmienna
+
 $blueColor: rbg(223, 221, 234);
 $padding: 10px 20px 30px 10px;
 $widthNormal: 500px;
@@ -11,6 +11,7 @@ body {
     h1 {
         background: rgb(59, 184, 115);
     }
+
 }
 .wrapper {
     max-width: 250px;
@@ -41,3 +42,6 @@ body {
 .container2 {
     @include cont($widthNormal, 30px, orange);
 }
+.autoprefixer {
+    user-select: none;
+    }
