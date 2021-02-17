@@ -8,10 +8,12 @@ const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 const path = require("path");
 module.exports = {
-    entry: "./src/index.js",
+    entry:{ index : "./src/index.js",
+            kontakt : "./src/kontakt.js",
+            about : "./src/about.js"},
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[contenthash].bundle.js",
+        filename: "[name].[contenthash].bundle.js",
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -19,8 +21,24 @@ module.exports = {
         watchContentBase: true,
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: "./src/index.html" }),
-
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: true,
+            chunks: ['index'],
+            filename: 'index.html'
+            }),
+        new HtmlWebpackPlugin({
+            template: './src/kontakt.html',
+            inject: true,
+            chunks: ['kontakt'],
+            filename: 'kontakt.html'
+            }),
+            new HtmlWebpackPlugin({
+                template: './src/about.html',
+                inject: true,
+                chunks: ['about'],
+                filename: 'about.html'
+                }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({ filename: "[name].[hash].css" }),
         new OptimizeCssAssetsPlugin({ assetNameRegExp: /\.css$/ }),
@@ -28,8 +46,7 @@ module.exports = {
             { host: "localhost", port: 9100, proxy: "http://localhost:9000" },
             {
                 reload: true,
-            }
-        ),
+            }),
         new webpack.LoaderOptionsPlugin({
             options: {
                 postcss: [autoprefixer()],

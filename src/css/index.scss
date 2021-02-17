@@ -37,7 +37,7 @@ body {
     }
 }
 .container {
-    @include cont(100px, 80px, brown);
+    @include cont(400px, 200px, brown);
 }
 .container2 {
     @include cont($widthNormal, 30px, orange);
@@ -45,3 +45,10 @@ body {
 .autoprefixer {
     user-select: none;
     }
+
+a{
+      color: brown;
+      font-size: 36px;
+      text-decoration: none;
+   }
+
